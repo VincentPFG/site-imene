@@ -24,7 +24,10 @@ export default {
 
   plugins: [].map((plugin) => '@/plugins/' + plugin),
 
-  components: true,
+  components: [
+    '~/components/',
+    { path: '~/components/snipcart/', prefix: 'sc' },
+  ],
 
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/vuetify'],
 
