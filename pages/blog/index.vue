@@ -2,6 +2,7 @@
   <div>
     <div v-for="{ slug, title } in posts" :key="slug">
       <h1>
+        test
         <nuxt-link :to="`/blog/${slug}`">
           {{ title }}
         </nuxt-link>
