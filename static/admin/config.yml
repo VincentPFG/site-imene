@@ -6,5 +6,22 @@
 
   locale: fr,
 
-  collections: [],
+  collections: [
+      {
+        name: blog,
+        label: Blog,
+        # format: "json"
+        folder: '/content/blog',
+        create: true,
+        slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+        # editor:
+        #   preview: false
+        fields: [
+            { label: 'Title', name: 'title', widget: 'string' },
+            { label: 'Date', name: 'date', widget: 'date' },
+            # { label: 'Description', name: 'description', widget: 'string' },
+            { label: 'Corps', name: 'body', widget: 'markdown' },
+          ],
+      },
+    ],
 }
