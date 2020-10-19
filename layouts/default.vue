@@ -18,7 +18,7 @@
     </v-navigation-drawer> -->
     <v-app-bar app color="primary">
       <!-- <v-app-bar-nav-icon @click="drawer = !drawer" /> -->
-      <v-toolbar-title>Imène</v-toolbar-title>
+      <v-toolbar-title>Imane Boumekouez</v-toolbar-title>
       <v-spacer />
       <Dark />
     </v-app-bar>
