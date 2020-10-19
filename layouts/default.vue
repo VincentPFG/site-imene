@@ -39,7 +39,17 @@
 </template>
 
 <script>
+// import Vuetify from 'vuetify/lib'
+// import colors from 'vuetify/lib/util/colors'
+
 export default {
+  // vuetify: new Vuetify({
+  //   dark: true,
+  //   themes: {
+  //     light: { primary: colors.pink.lighten1 },
+  //     dark: { primary: colors.pink.darken1 },
+  //   },
+  // }),
   data() {
     return {
       drawer: null,

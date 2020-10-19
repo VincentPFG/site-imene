@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-carousel cycle interval="3000" class="pink">
+    <v-carousel cycle interval="4000" class="primary">
       <v-carousel-item>
         <v-row class="fill-height" justify="center" align="center">
           <v-col cols="12" class="text-center text-h2 text-md-h1"
@@ -48,5 +48,6 @@ export default {
       ],
     }
   },
+  head: { title: 'Accueil' },
 }
 </script>

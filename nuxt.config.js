@@ -4,7 +4,7 @@ export default {
   target: 'static',
 
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: '%s - ' + 'Imane Boumekouez',
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
