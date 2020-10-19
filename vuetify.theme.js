@@ -1,8 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 
-const { red, blue, green, orange } = colors
+const { red, blue, green, orange, pink, purple } = colors
 
-const [primary, secondary, accent] = [blue, blue, red]
+const [primary, secondary, accent] = [pink, pink, purple]
 
 const base = {
   primary,
