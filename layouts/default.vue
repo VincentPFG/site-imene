@@ -24,3 +24,9 @@
     </v-bottom-navigation>
   </v-app>
 </template>
+
+<style>
+.v-item-group.v-bottom-navigation .v-btn.v-size--default {
+  height: inherit;
+}
+</style>
