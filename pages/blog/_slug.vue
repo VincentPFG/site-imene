@@ -8,7 +8,7 @@
       "
     ></p>
 
-    <v-bottom-navigation flat>
+    <v-bottom-navigation>
       <v-btn v-if="prev" nuxt :to="`/blog/${prev.slug}`">
         <span>Précédent</span> <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
