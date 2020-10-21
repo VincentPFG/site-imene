@@ -7,7 +7,7 @@
             >Pychologue Sociale</v-col
           >
           <v-col cols="12" class="text-center text-h3 text-md-h2"
-            >Consultations en ligne</v-col
+            >Consultations en ligne*</v-col
           >
         </v-row>
       </v-carousel-item>
@@ -17,11 +17,16 @@
             >Première séance offerte</v-col
           >
           <v-col cols="12" class="text-center text-h3 text-md-h2"
-            >Puis 30€/séance</v-col
+            >Puis 30€/séance**</v-col
           >
         </v-row>
       </v-carousel-item>
     </v-carousel>
+
+    <p class="text-caption">
+      * Par appels, SMS ou réseaux sociaux <br />
+      ** Payment par PayPal ou virement
+    </p>
 
     <v-list>
       <v-list-item v-for="{ icon, text } in contacts" :key="text">

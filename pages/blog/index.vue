@@ -1,12 +1,18 @@
 <template>
   <div>
-    <div v-for="{ slug, title } in posts" :key="slug">
-      <h1>
-        <nuxt-link :to="`/blog/${slug}`">
-          {{ title }}
-        </nuxt-link>
-      </h1>
-    </div>
+    <v-card
+      v-for="{ slug, title, date } in posts"
+      :key="slug"
+      nuxt
+      :to="`/blog/${slug}`"
+    >
+      <v-card-title v-text="title"></v-card-title>
+      <v-card-subtitle
+        v-text="
+          new Date(date).toLocaleDateString('fr-FR', { dateStyle: 'long' })
+        "
+      ></v-card-subtitle>
+    </v-card>
   </div>
 </template>
 
