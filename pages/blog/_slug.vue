@@ -24,7 +24,9 @@
       </v-btn>
     </v-bottom-navigation>
 
-    <nuxt-content :document="post" />
+    <v-container>
+      <nuxt-content :document="post" />
+    </v-container>
 
     <v-bottom-navigation>
       <v-btn v-if="prev" nuxt :to="`/blog/${prev.slug}`">
