@@ -5,6 +5,7 @@
       :key="slug"
       nuxt
       :to="`/blog/${slug}`"
+      style="margin: 3vh auto"
     >
       <v-card-title v-text="title"></v-card-title>
       <v-card-subtitle
@@ -19,8 +20,14 @@
 <script>
 export default {
   async asyncData({ $content }) {
-    const posts = await $content('blog').fetch()
+    const posts = await $content('blog').sortBy('date', 'desc').fetch()
     return { posts }
   },
 }
 </script>
+
+<style scoped>
+/* * {
+  margin: 5vh auto;
+} */
+</style>

@@ -13,8 +13,14 @@
     </v-main>
 
     <v-bottom-navigation app>
-      <v-btn nuxt to="/"> Acceuil </v-btn>
-      <v-btn nuxt to="/blog"> Blog </v-btn>
+      <v-btn nuxt to="/">
+        <span>Acceuil</span>
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
+      <v-btn nuxt to="/blog">
+        <span>Blog</span>
+        <v-icon>mdi-book-open-variant</v-icon>
+      </v-btn>
     </v-bottom-navigation>
   </v-app>
 </template>
