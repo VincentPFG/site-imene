@@ -38,6 +38,9 @@
         </v-list-item-content>
       </v-list-item>
     </v-list>
+
+    <v-alert type="warning">Formulaire non fonctionnel</v-alert>
+    <Form></Form>
   </div>
 </template>
 
