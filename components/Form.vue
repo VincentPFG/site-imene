@@ -139,8 +139,8 @@ const encode1 = (data) =>
 const encode2 = (data) =>
   '\n' +
   entries(data)
-    .map(([k, v]) => `${k} : ${v}`)
-    .join('\n\t')
+    .map(([k, v]) => `\t${k} : ${v}`)
+    .join('\n')
 
 export default {
   data() {
