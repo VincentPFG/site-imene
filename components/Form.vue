@@ -137,9 +137,10 @@ const encode1 = (data) =>
     .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
     .join('&')
 const encode2 = (data) =>
+  '\n' +
   entries(data)
     .map(([k, v]) => `${k} : ${v}`)
-    .join('\n')
+    .join('\n\t')
 
 export default {
   data() {
