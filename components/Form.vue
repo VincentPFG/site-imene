@@ -156,7 +156,7 @@ export default {
             },
             body: encode1({
               'form-name': 'contact',
-              contenu: encode2(this.form),
+              contenu: encode2(this.f),
             }),
           })
           this.$refs.form.reset()
