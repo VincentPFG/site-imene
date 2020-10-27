@@ -25,7 +25,7 @@
     </v-bottom-navigation>
 
     <v-container>
-      <nuxt-content :document="post" />
+      <nuxt-content :document="post" class="text-justify" />
     </v-container>
 
     <v-bottom-navigation>

@@ -36,11 +36,27 @@
         <v-list-item-content>
           <v-list-item-title v-text="text"></v-list-item-title>
         </v-list-item-content>
+        <v-list-item-action v-if="icon === 'mdi-cellphone'">
+          <v-btn icon :href="`tel:${text}`">
+            <v-icon color="primary"> mdi-phone > </v-icon>
+          </v-btn>
+        </v-list-item-action>
+        <v-list-item-action v-else-if="icon === 'mdi-email'">
+          <v-btn icon :href="`mailto:${text}`">
+            <v-icon color="primary"> mdi-pen > </v-icon>
+          </v-btn>
+        </v-list-item-action>
       </v-list-item>
     </v-list>
 
     <v-alert type="warning">Formulaire non fonctionnel</v-alert>
-    <Form></Form>
+
+    <v-card>
+      <v-toolbar color="primary">
+        <v-toolbar-title>Fiche patient</v-toolbar-title>
+      </v-toolbar>
+      <Form></Form>
+    </v-card>
   </div>
 </template>
 

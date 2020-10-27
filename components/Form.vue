@@ -8,26 +8,63 @@
       <v-container grid-list-xs>
         <p v-text="JSON.stringify(f)"></p>
 
-        <v-text-field v-model="f.nom" label="Nom"></v-text-field>
-        <v-text-field v-model="f.prenom" label="Prénom"></v-text-field>
+        <v-row>
+          <v-col cols="12" sm="6"
+            ><v-text-field v-model="f.nom" label="Nom"></v-text-field
+          ></v-col>
+          <v-col cols="12" sm="6"
+            ><v-text-field v-model="f.prenom" label="Prénom"></v-text-field
+          ></v-col>
+        </v-row>
+
         <v-slider
+          v-if="!f.ageSup100"
           v-model="f.age"
           label="Âge"
           thumb-label="always"
           thumb-size="20"
         ></v-slider>
+        <v-checkbox
+          v-if="f.age === 100"
+          v-model="f.ageSup100"
+          label="Plus de 100 ans"
+        ></v-checkbox>
         <v-select
           v-model="f.genre"
           :items="['Femme', 'Homme']"
           label="Genre"
         ></v-select>
 
-        <v-text-field v-model="f.profession" label="Profession"></v-text-field>
-        <v-text-field v-model="f.etudes" label="Niveau d'étude"></v-text-field>
-        <v-text-field v-model="f.insee" label="Catégorie INSEE"></v-text-field>
+        <v-row>
+          <v-col cols="12" sm="4"
+            ><v-text-field
+              v-model="f.profession"
+              label="Profession"
+            ></v-text-field
+          ></v-col>
+          <v-col cols="12" sm="4"
+            ><v-text-field
+              v-model="f.etudes"
+              label="Niveau d'étude"
+            ></v-text-field
+          ></v-col>
+          <v-col cols="12" sm="4"
+            ><v-text-field
+              v-model="f.insee"
+              label="Catégorie INSEE"
+            ></v-text-field
+          ></v-col>
+        </v-row>
 
-        <v-text-field v-model="f.tel" label="Téléphone"></v-text-field>
-        <v-text-field v-model="f.mail" label="Mail"></v-text-field>
+        <v-row>
+          <v-col cols="12" sm="6"
+            ><v-text-field v-model="f.tel" label="Téléphone"></v-text-field
+          ></v-col>
+          <v-col cols="12" sm="6"
+            ><v-text-field v-model="f.mail" label="Mail"></v-text-field
+          ></v-col>
+        </v-row>
+
         <v-textarea v-model="f.adresse" label="Adresse"></v-textarea>
 
         <v-select
@@ -44,7 +81,7 @@
         ></v-select>
         <v-checkbox v-model="f.enfants" label="Enfants"></v-checkbox>
         <v-slider
-          v-if="f.enfants"
+          v-if="f.enfants && !f.nombreEnfantsSup5"
           v-model="f.nombreEnfants"
           label="Nombre d'enfants"
           min="1"
@@ -52,6 +89,11 @@
           thumb-label="always"
           thumb-size="20"
         ></v-slider>
+        <v-checkbox
+          v-if="f.enfants && f.nombreEnfants === 5"
+          v-model="f.nombreEnfantsSup5"
+          label="Plus de 5 enfants"
+        ></v-checkbox>
 
         <v-text-field v-model="f.diagnostic" label="Diagnostic"></v-text-field>
         <v-checkbox v-model="f.suicidant" label="Suicidant"></v-checkbox>
@@ -89,13 +131,20 @@
           label="Orientation prévue"
         ></v-select>
         <v-checkbox v-model="f.recidive" label="Récidive"></v-checkbox>
-        <p>À {{ f.moisRecidive === 24 ? '24+' : f.moisRecidive }} mois</p>
-        <v-slider
-          v-if="f.recidive"
-          v-model="f.moisRecidive"
-          max="24"
-          thumb-size="20"
-        ></v-slider>
+        <div v-if="f.recidive && !f.recidiveSup24">
+          <p>À {{ f.moisRecidive }} mois</p>
+          <v-slider
+            v-if="f.recidive && !f.recidiveSup24"
+            v-model="f.moisRecidive"
+            max="24"
+            thumb-size="20"
+          ></v-slider>
+        </div>
+        <v-checkbox
+          v-if="f.recidive && f.moisRecidive === 24"
+          v-model="f.recidiveSup24"
+          label="À plus de 24 mois"
+        ></v-checkbox>
         <v-checkbox
           v-model="f.participation"
           label="Participation à la recherche"
