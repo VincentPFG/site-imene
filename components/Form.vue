@@ -10,10 +10,14 @@
 
         <v-row>
           <v-col cols="12" sm="6"
-            ><v-text-field v-model="f.nom" label="Nom"></v-text-field
+            ><v-text-field v-model="f.nom" label="Nom" outlined></v-text-field
           ></v-col>
           <v-col cols="12" sm="6"
-            ><v-text-field v-model="f.prenom" label="Prénom"></v-text-field
+            ><v-text-field
+              v-model="f.prenom"
+              label="Prénom"
+              outlined
+            ></v-text-field
           ></v-col>
         </v-row>
 
@@ -31,6 +35,7 @@
         ></v-checkbox>
         <v-select
           v-model="f.genre"
+          outlined
           :items="['Femme', 'Homme']"
           label="Genre"
         ></v-select>
@@ -39,18 +44,21 @@
           <v-col cols="12" sm="4"
             ><v-text-field
               v-model="f.profession"
+              outlined
               label="Profession"
             ></v-text-field
           ></v-col>
           <v-col cols="12" sm="4"
             ><v-text-field
               v-model="f.etudes"
+              outlined
               label="Niveau d'étude"
             ></v-text-field
           ></v-col>
           <v-col cols="12" sm="4"
             ><v-text-field
               v-model="f.insee"
+              outlined
               label="Catégorie INSEE"
             ></v-text-field
           ></v-col>
@@ -58,55 +66,73 @@
 
         <v-row>
           <v-col cols="12" sm="6"
-            ><v-text-field v-model="f.tel" label="Téléphone"></v-text-field
+            ><v-text-field
+              v-model="f.tel"
+              outlined
+              label="Téléphone"
+            ></v-text-field
           ></v-col>
           <v-col cols="12" sm="6"
-            ><v-text-field v-model="f.mail" label="Mail"></v-text-field
+            ><v-text-field v-model="f.mail" outlined label="Mail"></v-text-field
           ></v-col>
         </v-row>
 
-        <v-textarea v-model="f.adresse" label="Adresse"></v-textarea>
+        <v-textarea v-model="f.adresse" outlined label="Adresse"></v-textarea>
 
-        <v-select
-          v-model="f.relation"
-          :items="[
-            'Célibataire',
-            'Concubinage',
-            'PACS',
-            'Mariage',
-            'Veuvage',
-            'En cours de séparatioin',
-          ]"
-          label="Relation"
-        ></v-select>
-        <v-checkbox v-model="f.enfants" label="Enfants"></v-checkbox>
-        <v-slider
-          v-if="f.enfants && !f.nombreEnfantsSup5"
-          v-model="f.nombreEnfants"
-          label="Nombre d'enfants"
-          min="1"
-          max="5"
-          thumb-label="always"
-          thumb-size="20"
-        ></v-slider>
-        <v-checkbox
-          v-if="f.enfants && f.nombreEnfants === 5"
-          v-model="f.nombreEnfantsSup5"
-          label="Plus de 5 enfants"
-        ></v-checkbox>
+        <v-row>
+          <v-col cols="12" sm="4"
+            ><v-select
+              v-model="f.relation"
+              outlined
+              :items="[
+                'Célibataire',
+                'Concubinage',
+                'PACS',
+                'Mariage',
+                'Veuvage',
+                'En cours de séparatioin',
+              ]"
+              label="Relation"
+            ></v-select
+          ></v-col>
+          <v-col cols="12" sm="8"
+            ><v-checkbox v-model="f.enfants" label="Enfants"></v-checkbox>
+            <v-slider
+              v-if="f.enfants && !f.nombreEnfantsSup5"
+              v-model="f.nombreEnfants"
+              label="Nombre d'enfants"
+              min="1"
+              max="5"
+              thumb-label="always"
+              thumb-size="20"
+            ></v-slider>
+            <v-checkbox
+              v-if="f.enfants && f.nombreEnfants === 5"
+              v-model="f.nombreEnfantsSup5"
+              label="Plus de 5 enfants"
+            ></v-checkbox
+          ></v-col>
+        </v-row>
 
-        <v-text-field v-model="f.diagnostic" label="Diagnostic"></v-text-field>
+        <v-text-field
+          v-model="f.diagnostic"
+          outlined
+          label="Diagnostic"
+        ></v-text-field>
         <v-checkbox v-model="f.suicidant" label="Suicidant"></v-checkbox>
         <v-text-field
           v-model="f.proches"
+          outlined
           label="Proche à contacter"
         ></v-text-field>
         <v-text-field
           v-model="f.referant"
+          outlined
           label="Référent médico-psycho"
         ></v-text-field>
         <v-text-field
           v-model="f.traitement"
+          outlined
           label="Traitement médicamenteux"
         ></v-text-field>
         <v-checkbox
@@ -116,17 +142,20 @@
         <div v-if="f.suivi">
           <v-select
             v-model="f.etat"
+            outlined
             :items="['Hospitalisation', 'Ambulatoire']"
             label="État institutionel"
           ></v-select>
         </div>
         <v-select
           v-model="f.modeHospitalisation"
+          outlined
           :items="['SL', 'SDT', 'SPI', 'SDRE', 'CH. Isolement']"
           label="Mode d'hospitalisation"
         ></v-select>
         <v-select
           v-model="f.orientation"
+          outlined
           :items="['Sortie', 'Soins ambulatoires', 'Hôpital', 'Clinique']"
           label="Orientation prévue"
         ></v-select>
@@ -145,14 +174,21 @@
           v-model="f.recidiveSup24"
           label="À plus de 24 mois"
         ></v-checkbox>
-        <v-checkbox
-          v-model="f.participation"
-          label="Participation à la recherche"
-        ></v-checkbox>
-        <v-checkbox
-          v-model="f.consentement"
-          label="Formulaire de consentement"
-        ></v-checkbox>
+
+        <v-row>
+          <v-col cols="12" sm="6"
+            ><v-checkbox
+              v-model="f.participation"
+              label="Participation à la recherche"
+            ></v-checkbox
+          ></v-col>
+          <v-col cols="12" sm="6"
+            ><v-checkbox
+              v-model="f.consentement"
+              label="Formulaire de consentement"
+            ></v-checkbox
+          ></v-col>
+        </v-row>
 
         <v-row justify="center">
           <v-btn type="submit" color="primary">

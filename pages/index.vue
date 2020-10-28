@@ -29,24 +29,30 @@
     </p>
 
     <v-list>
-      <v-list-item v-for="{ icon, text } in contacts" :key="text">
-        <v-list-item-icon>
-          <v-icon v-text="icon"></v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title v-text="text"></v-list-item-title>
-        </v-list-item-content>
-        <v-list-item-action v-if="icon === 'mdi-cellphone'">
-          <v-btn icon :href="`tel:${text}`">
-            <v-icon color="primary"> mdi-phone > </v-icon>
-          </v-btn>
-        </v-list-item-action>
-        <v-list-item-action v-else-if="icon === 'mdi-email'">
-          <v-btn icon :href="`mailto:${text}`">
-            <v-icon color="primary"> mdi-pen > </v-icon>
-          </v-btn>
-        </v-list-item-action>
-      </v-list-item>
+      <v-container>
+        <v-row>
+          <v-col v-for="{ icon, text } in contacts" :key="text" cols="12" sm="6"
+            ><v-list-item>
+              <v-list-item-icon>
+                <v-icon v-text="icon"></v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>
+                <v-list-item-title v-text="text"></v-list-item-title>
+              </v-list-item-content>
+              <v-list-item-action v-if="icon === 'mdi-cellphone'">
+                <v-btn icon :href="`tel:${text}`">
+                  <v-icon color="primary"> mdi-phone > </v-icon>
+                </v-btn>
+              </v-list-item-action>
+              <v-list-item-action v-else-if="icon === 'mdi-email'">
+                <v-btn icon :href="`mailto:${text}`">
+                  <v-icon color="primary"> mdi-pen > </v-icon>
+                </v-btn>
+              </v-list-item-action>
+            </v-list-item></v-col
+          >
+        </v-row>
+      </v-container>
     </v-list>
 
     <v-alert type="warning">Formulaire non fonctionnel</v-alert>
