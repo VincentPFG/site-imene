@@ -56,9 +56,9 @@
       </v-container>
     </v-list>
 
-    <v-alert type="warning">Formulaire non fonctionnel</v-alert>
+    <!-- <v-alert type="warning">Formulaire non fonctionnel</v-alert> -->
 
-    <v-card>
+    <v-card class="mt-5">
       <v-toolbar color="primary">
         <v-toolbar-title>Fiche patient</v-toolbar-title>
       </v-toolbar>
