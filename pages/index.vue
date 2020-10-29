@@ -49,8 +49,9 @@
                   <v-icon color="primary"> mdi-pen > </v-icon>
                 </v-btn>
               </v-list-item-action>
-            </v-list-item></v-col
-          >
+            </v-list-item>
+            <v-divider></v-divider>
+          </v-col>
         </v-row>
       </v-container>
     </v-list>
