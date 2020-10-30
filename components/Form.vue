@@ -74,10 +74,16 @@
               v-model="f.tel"
               outlined
               label="Téléphone"
+              type="tel"
             ></v-text-field
           ></v-col>
           <v-col cols="12" sm="6"
-            ><v-text-field v-model="f.mail" outlined label="Mail"></v-text-field
+            ><v-text-field
+              v-model="f.mail"
+              outlined
+              label="Mail"
+              type="email"
+            ></v-text-field
           ></v-col>
         </v-row>
 
