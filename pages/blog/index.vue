@@ -23,6 +23,7 @@ export default {
     const posts = await $content('blog').sortBy('date', 'desc').fetch()
     return { posts }
   },
+  head: { title: 'Blog' },
 }
 </script>
 

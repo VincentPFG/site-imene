@@ -58,5 +58,9 @@ export default {
       .fetch()
     return { post, prev, next }
   },
+
+  head() {
+    return { title: this.post.title }
+  },
 }
 </script>
