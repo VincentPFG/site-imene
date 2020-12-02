@@ -14,7 +14,7 @@
 
     <v-bottom-navigation app>
       <v-btn nuxt to="/">
-        <span>Acceuil</span>
+        <span>Accueil</span>
         <v-icon>mdi-home</v-icon>
       </v-btn>
       <v-btn nuxt to="/blog">
